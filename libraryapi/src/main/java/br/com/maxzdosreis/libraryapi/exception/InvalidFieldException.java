@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 public class InvalidFieldException extends RuntimeException{
 
-    public InvalidFieldException(String message){
+    private String campo;
+
+    public InvalidFieldException(String campo, String message){
         super(message);
+        this.campo = campo;
     }
 }
